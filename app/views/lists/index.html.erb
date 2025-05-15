@@ -1,0 +1,43 @@
+<nav class="navbar navbar-expand-sm navbar-light bg-light mb-4">
+  <div class="container">
+    <%= link_to "#", class: "navbar-brand" do %>
+      <%= image_tag "https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/logo.png", height: "40" %>
+    <% end %>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+            data-bs-target="#navbarNav" aria-controls="navbarNav"
+            aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav ms-auto">
+        <li class="nav-item">
+          <%= link_to "Create New List", new_list_path,
+          class: "btn btn-outline-primary" %>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+<section class="py-5 text-white" style="
+    background: url('<%= asset_path('seats.jpeg') %>') center/cover no-repeat;">
+  <div class="container text-center">
+    <h1 class="display-4 fw-bold">Create a New List</h1>
+  </div>
+</section>
+<section class="py-5">
+  <div class="container">
+    <div class="row row-cols-1 row-cols-md-3 g-4">
+      <% @lists.each do |list| %>
+        <div class="col">
+          <div class="card text-white h-100">
+            <%= image_tag "film.jpg", class: "card-img", alt: list.name %>
+            <div class="card-img-overlay d-flex align-items-end p-0">
+              <%= link_to list.name, list_path(list),
+              class: "w-100 text-center py-2 bg-dark bg-opacity-75 text-decoration-none text-white h5 m-0" %>
+            </div>
+          </div>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</section>
