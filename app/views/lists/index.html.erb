@@ -1,7 +1,11 @@
 <nav class="navbar navbar-expand-sm navbar-light bg-light mb-4">
   <div class="container">
     <%= link_to "#", class: "navbar-brand" do %>
-      <%= image_tag "https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/logo.png", height: "40" %>
+      <% if @list.photo.attached? %>
+        <%= cl_image_path @list.photo.key, height: 300, width: 400, crop: :fill %>
+      <% else %>
+        <%= image_tag 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTPQDYau3Hs4-xw1i8jVSUY4BlF4FLmg8lQqg&usqp=CAU', height: 80, width: 80, crop: :fill %>
+      <% end %>
     <% end %>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
             data-bs-target="#navbarNav" aria-controls="navbarNav"
@@ -27,9 +31,14 @@
   <div class="container">
     <div class="row row-cols-1 row-cols-md-3 g-4">
       <% @lists.each do |list| %>
-        <div class="col">
+        <div class="column">
           <div class="card text-white h-100">
-            <%= image_tag "film.jpg", class: "card-img", alt: list.name %>
+            <% if list.photo.attached? %>
+              <%= cl_image_tag list.photo.key, class: "card-img", alt: list.name %>
+            <% else %>
+              <%= image_tag 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTPQDYau3Hs4-xw1i8jVSUY4BlF4FLmg8lQqg&usqp=CAU',
+              class: "card-img", alt: list.name %>
+            <% end %>
             <div class="card-img-overlay d-flex align-items-end p-0">
               <%= link_to list.name, list_path(list),
               class: "w-100 text-center py-2 bg-dark bg-opacity-75 text-decoration-none text-white h5 m-0" %>
