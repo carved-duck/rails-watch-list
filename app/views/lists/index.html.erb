@@ -1,6 +1,6 @@
 <nav class="navbar navbar-expand-sm navbar-light bg-light mb-4">
   <div class="container">
-    <%= link_to "#", class: "navbar-brand" do %>
+    <%= link_to "", class: "navbar-brand" do %>
       <% if @list.photo.attached? %>
         <%= cl_image_path @list.photo.key, height: 300, width: 400, crop: :fill %>
       <% else %>
@@ -40,6 +40,12 @@
               class: "card-img", alt: list.name %>
             <% end %>
             <div class="card-img-overlay d-flex align-items-end p-0">
+              <%= link_to list_path(list),
+                data: { turbo_method: :delete,
+                turbo_confirm: "Are you sure you want to delete?" },
+                class: 'card-remove-link' do %>
+                <i class="fa-solid fa-square-minus"></i>
+              <% end %>
               <%= link_to list.name, list_path(list),
               class: "w-100 text-center py-2 bg-dark bg-opacity-75 text-decoration-none text-white h5 m-0" %>
             </div>
