@@ -1,7 +1,11 @@
 .banner {
-  background-size: cover;
-  background-position: center;
-  padding: 150px 0;
+  background-image: url('/assets/seats.jpeg');
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: contain;
+  height: 300px;
+  display: flex;
+  align-items: center;
 }
 
 .banner h1 {
