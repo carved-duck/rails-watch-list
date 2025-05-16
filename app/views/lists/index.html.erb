@@ -1,12 +1,6 @@
 <nav class="navbar navbar-expand-sm navbar-light bg-light mb-4">
+  <div class="banner" style='background-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTPQDYau3Hs4-xw1i8jVSUY4BlF4FLmg8lQqg&usqp=CAU"); width: 80px; height: 80px;'></div>
   <div class="container">
-    <%= link_to "", class: "navbar-brand" do %>
-      <% if @list.photo.attached? %>
-        <%= cl_image_path @list.photo.key, height: 300, width: 400, crop: :fill %>
-      <% else %>
-        <%= image_tag 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTPQDYau3Hs4-xw1i8jVSUY4BlF4FLmg8lQqg&usqp=CAU', height: 80, width: 80, crop: :fill %>
-      <% end %>
-    <% end %>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
             data-bs-target="#navbarNav" aria-controls="navbarNav"
             aria-expanded="false" aria-label="Toggle navigation">
