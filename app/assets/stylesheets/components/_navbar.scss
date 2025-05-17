@@ -10,3 +10,18 @@
 .navbar-lewagon .navbar-brand img {
   width: 40px;
 }
+
+.navbar-light {
+  .navbar-brand img {
+    max-height: 40px;
+    width: auto;
+  }
+
+  .navbar-toggler {
+    border-color: rgba($black, 0.1);
+  }
+
+  .navbar-collapse {
+    flex-grow: 0;
+  }
+}

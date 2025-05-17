@@ -1,16 +1,21 @@
 <nav class="navbar navbar-expand-sm navbar-light bg-light mb-4">
-  <div class="logo"></div>
-  <div class="container">
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
-            data-bs-target="#navbarNav" aria-controls="navbarNav"
-            aria-expanded="false" aria-label="Toggle navigation">
+  <div class="container-fluid">
+    <%= link_to root_path, class: "navbar-brand d-flex align-items-center" do %>
+      <div class="logo"></div>
+    <% end %>
+    <button class="navbar-toggler ms-auto" type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarNav"
+            aria-controls="navbarNav"
+            aria-expanded="false"
+            aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarNav">
       <ul class="navbar-nav ms-auto">
         <li class="nav-item">
           <%= link_to "Create New List", new_list_path,
-          class: "btn btn-outline-primary" %>
+                      class: "btn btn-outline-primary" %>
         </li>
       </ul>
     </div>
@@ -18,7 +23,7 @@
 </nav>
 <section class="banner text-white">
   <div class="container text-center">
-    <h1 class="display-4 fw-bold"> Movie Reviews</h1>
+    <h1 class="display-4 fw-bold">Movie Categories</h1>
   </div>
 </section>
 <section class="py-5">

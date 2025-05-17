@@ -5,6 +5,7 @@ class ListsController < ApplicationController
   end
   def show
     @list = List.find(params[:id])
+    @average_ratings = @list.bookmarks.group(:movie_id).average(:rating).transform_values { |avg| avg.to_f.round(2) }
   end
   def new
     @list = List.new

@@ -1,5 +1,17 @@
 <%= simple_form_for [@list, @bookmark] do |f| %>
   <%= f.input :comment, prompt: "Must be more than 6 characters" %>
   <%= f.association :movie %>
+  <div class="mb-3">
+    <label class="form-label">Your Rating</label>
+    <div>
+      <% (1..5).each do |number| %>
+        <%= f.radio_button :rating, number, id: "rating_#{number}" %>
+        <%= f.label :rating, ("★" * number), for: "rating_#{number}",
+                  class: "me-2 star-label" %>
+      <% end %>
+    </div>
+    <%= f.error :rating %>
+  </div>
   <%= f.button :submit, class: "btn btn-primary mt-3" %>
 <% end %>
+<%#= f.input :rating, collection: [1,2,3,4,5], prompt: "Choose a rating" %>

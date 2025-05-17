@@ -1,0 +1,13 @@
+.star-label {
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
+input[type="radio"] {
+  display: none;
+}
+
+input[type="radio"] + label:hover,
+input[type="radio"]:checked + label {
+  color: gold;
+}
