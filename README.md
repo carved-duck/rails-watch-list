@@ -1,4 +1,4 @@
-# 📚 Tokyo Turntable
+# 📚 Rails Watch List
 
 A simple website made during my time at Le Wagon. It's a way to make playlists around movies. Pick a genre, add movies, rate them too!
 <br>
