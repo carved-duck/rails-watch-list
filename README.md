@@ -4,7 +4,7 @@ A simple website made during my time at Le Wagon. It's a way to make playlists a
 <br>
 
 <br>
-App home: [https://airbnb-carved-duck-e9e78c22c0c6.herokuapp.com/](https://watch-list-julian-bd599b732769.herokuapp.com/)
+App home: https://watch-list-julian-bd599b732769.herokuapp.com/
    
 
 ## Getting Started
